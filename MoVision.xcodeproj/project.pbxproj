@@ -13,6 +13,7 @@
 		5AEA1BE42293CB8500586209 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AEA1BE22293CB8500586209 /* Main.storyboard */; };
 		5AEA1BE62293CB8700586209 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AEA1BE52293CB8700586209 /* Assets.xcassets */; };
 		5AEA1BE92293CB8700586209 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AEA1BE72293CB8700586209 /* LaunchScreen.storyboard */; };
+		5AEA1BF32293CEFC00586209 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA1BF22293CEFC00586209 /* ThirdViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		5AEA1BE52293CB8700586209 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5AEA1BE82293CB8700586209 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5AEA1BEA2293CB8700586209 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AEA1BF22293CEFC00586209 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				5AEA1BDE2293CB8500586209 /* FirstViewController.swift */,
 				5AEA1BE02293CB8500586209 /* SecondViewController.swift */,
+				5AEA1BF22293CEFC00586209 /* ThirdViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 			files = (
 				5AEA1BE12293CB8500586209 /* SecondViewController.swift in Sources */,
 				5AEA1BDD2293CB8500586209 /* AppDelegate.swift in Sources */,
+				5AEA1BF32293CEFC00586209 /* ThirdViewController.swift in Sources */,
 				5AEA1BDF2293CB8500586209 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
