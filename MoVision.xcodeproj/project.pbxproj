@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5520FF26670DDFD90CC86C5E /* Pods_MoVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F59B8B11602D0E4C63C905B /* Pods_MoVision.framework */; };
 		5AEA1BDD2293CB8500586209 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA1BDC2293CB8500586209 /* AppDelegate.swift */; };
 		5AEA1BDF2293CB8500586209 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA1BDE2293CB8500586209 /* MoviesViewController.swift */; };
 		5AEA1BE12293CB8500586209 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA1BE02293CB8500586209 /* SecondViewController.swift */; };
@@ -16,6 +17,13 @@
 		5AEA1BF32293CEFC00586209 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA1BF22293CEFC00586209 /* ThirdViewController.swift */; };
 		5AEA1BF62293D30900586209 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA1BF52293D30900586209 /* CategoryTableViewCell.swift */; };
 		5AEA1BF82293D51D00586209 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA1BF72293D51D00586209 /* MovieCollectionViewCell.swift */; };
+		5AEA1BFE229918D000586209 /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA1BFD229918D000586209 /* Movies.swift */; };
+		5AEA1C042299B47800586209 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA1C032299B47800586209 /* Movie.swift */; };
+		5AEA1C062299B74700586209 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA1C052299B74700586209 /* APIClient.swift */; };
+		5AEA1C092299BD9400586209 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA1C082299BD9400586209 /* Endpoints.swift */; };
+		5AEA1C0C2299DB1500586209 /* ViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA1C0B2299DB1500586209 /* ViewController+Extension.swift */; };
+		5AEA1C0F2299E7FE00586209 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA1C0E2299E7FE00586209 /* Category.swift */; };
+		5AEA1C112299E88300586209 /* Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA1C102299E88300586209 /* Catalog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +38,17 @@
 		5AEA1BF22293CEFC00586209 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		5AEA1BF52293D30900586209 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		5AEA1BF72293D51D00586209 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
+		5AEA1BFD229918D000586209 /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
+		5AEA1BFF2299620200586209 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AEA1C032299B47800586209 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		5AEA1C052299B74700586209 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		5AEA1C082299BD9400586209 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		5AEA1C0B2299DB1500586209 /* ViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension.swift"; sourceTree = "<group>"; };
+		5AEA1C0E2299E7FE00586209 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		5AEA1C102299E88300586209 /* Catalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catalog.swift; sourceTree = "<group>"; };
+		7099FAA0F0518F0D1A33B749 /* Pods-MoVision.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoVision.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoVision/Pods-MoVision.debug.xcconfig"; sourceTree = "<group>"; };
+		7F59B8B11602D0E4C63C905B /* Pods_MoVision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoVision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA598AD1AF3EF451CFE5FE57 /* Pods-MoVision.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoVision.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoVision/Pods-MoVision.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +56,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5520FF26670DDFD90CC86C5E /* Pods_MoVision.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		012C317D010BD8E651591685 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7F59B8B11602D0E4C63C905B /* Pods_MoVision.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4DB32F821460FAECEF0ED7C8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7099FAA0F0518F0D1A33B749 /* Pods-MoVision.debug.xcconfig */,
+				CA598AD1AF3EF451CFE5FE57 /* Pods-MoVision.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5AEA1BD02293CB8500586209 = {
 			isa = PBXGroup;
 			children = (
+				5AEA1BFF2299620200586209 /* Alamofire.framework */,
 				5AEA1BDB2293CB8500586209 /* MoVision */,
 				5AEA1BDA2293CB8500586209 /* Products */,
+				4DB32F821460FAECEF0ED7C8 /* Pods */,
+				012C317D010BD8E651591685 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +102,8 @@
 		5AEA1BDB2293CB8500586209 /* MoVision */ = {
 			isa = PBXGroup;
 			children = (
+				5AEA1C0A2299DB0100586209 /* Extension */,
+				5AEA1BFC2298DD7C00586209 /* Model */,
 				5AEA1BF12293CBE200586209 /* Controller */,
 				5AEA1BF02293CBB900586209 /* View */,
 				5AEA1BDC2293CB8500586209 /* AppDelegate.swift */,
@@ -100,6 +142,43 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		5AEA1BFC2298DD7C00586209 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5AEA1C0D2299E7D400586209 /* Data */,
+				5AEA1C072299BD8700586209 /* Shared */,
+				5AEA1C052299B74700586209 /* APIClient.swift */,
+				5AEA1C0E2299E7FE00586209 /* Category.swift */,
+				5AEA1C102299E88300586209 /* Catalog.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5AEA1C072299BD8700586209 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				5AEA1C082299BD9400586209 /* Endpoints.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		5AEA1C0A2299DB0100586209 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5AEA1C0B2299DB1500586209 /* ViewController+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		5AEA1C0D2299E7D400586209 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				5AEA1BFD229918D000586209 /* Movies.swift */,
+				5AEA1C032299B47800586209 /* Movie.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -107,9 +186,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5AEA1BED2293CB8700586209 /* Build configuration list for PBXNativeTarget "MoVision" */;
 			buildPhases = (
+				0C184505311012E18AA57B97 /* [CP] Check Pods Manifest.lock */,
 				5AEA1BD52293CB8500586209 /* Sources */,
 				5AEA1BD62293CB8500586209 /* Frameworks */,
 				5AEA1BD72293CB8500586209 /* Resources */,
+				2FABBE7B111B638DDF73726A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -166,6 +247,44 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0C184505311012E18AA57B97 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MoVision-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2FABBE7B111B638DDF73726A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoVision/Pods-MoVision-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoVision/Pods-MoVision-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoVision/Pods-MoVision-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5AEA1BD52293CB8500586209 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -174,9 +293,16 @@
 				5AEA1BF62293D30900586209 /* CategoryTableViewCell.swift in Sources */,
 				5AEA1BE12293CB8500586209 /* SecondViewController.swift in Sources */,
 				5AEA1BDD2293CB8500586209 /* AppDelegate.swift in Sources */,
+				5AEA1BFE229918D000586209 /* Movies.swift in Sources */,
+				5AEA1C092299BD9400586209 /* Endpoints.swift in Sources */,
+				5AEA1C112299E88300586209 /* Catalog.swift in Sources */,
 				5AEA1BF82293D51D00586209 /* MovieCollectionViewCell.swift in Sources */,
 				5AEA1BF32293CEFC00586209 /* ThirdViewController.swift in Sources */,
+				5AEA1C042299B47800586209 /* Movie.swift in Sources */,
+				5AEA1C0C2299DB1500586209 /* ViewController+Extension.swift in Sources */,
 				5AEA1BDF2293CB8500586209 /* MoviesViewController.swift in Sources */,
+				5AEA1C062299B74700586209 /* APIClient.swift in Sources */,
+				5AEA1C0F2299E7FE00586209 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +365,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -257,6 +384,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				REEXPORTED_FRAMEWORK_NAMES = "";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -300,6 +428,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -311,6 +440,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				REEXPORTED_FRAMEWORK_NAMES = "";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -320,16 +450,16 @@
 		};
 		5AEA1BEE2293CB8700586209 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7099FAA0F0518F0D1A33B749 /* Pods-MoVision.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = MoVision/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdk.MoVision;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -340,16 +470,16 @@
 		};
 		5AEA1BEF2293CB8700586209 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA598AD1AF3EF451CFE5FE57 /* Pods-MoVision.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = MoVision/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdk.MoVision;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -10,10 +10,35 @@ import UIKit
 
 class MoviesViewController: UIViewController {
     
-    private let categories = ["Top Rated", "Upcoming", "Now Playing"]
-
+    @IBOutlet weak var moviesTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        getTopRatedMovies()
+    }
+}
+
+// MARK : - Private Methods
+
+extension MoviesViewController {
+    
+    private func getTopRatedMovies() {
+        APIClient.getTopRatedMovies { movies, error in
+            if let error = error {
+                self.showError(withMessage: error.localizedDescription)
+                
+                return
+            }
+            
+            if let movies = movies {
+                Catalog.sharedInstance.categories[0].movies = movies.results
+            }
+            
+            DispatchQueue.main.async {
+                self.moviesTableView.reloadData()
+            }
+        }
     }
 }
 
@@ -22,7 +47,7 @@ class MoviesViewController: UIViewController {
 extension MoviesViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return categories.count
+        return Catalog.sharedInstance.categories.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -30,11 +55,12 @@ extension MoviesViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return categories[section]
+        return Catalog.sharedInstance.categories[section].name
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath) as! CategoryTableViewCell
+        cell.category = Catalog.sharedInstance.categories[indexPath.section]
         
         return cell
     }
