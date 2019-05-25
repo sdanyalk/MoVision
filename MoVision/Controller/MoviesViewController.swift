@@ -15,7 +15,9 @@ class MoviesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getTopRatedMovies()
+        getMovies(for: .topRated)
+        getMovies(for: .upComing)
+        getMovies(for: .nowPlaying)
     }
 }
 
@@ -23,8 +25,8 @@ class MoviesViewController: UIViewController {
 
 extension MoviesViewController {
     
-    private func getTopRatedMovies() {
-        APIClient.getTopRatedMovies { movies, error in
+    private func getMovies(for categoryType: CategoryType) {
+        APIClient.getMovies(categoryType) { movies, error in
             if let error = error {
                 self.showError(withMessage: error.localizedDescription)
                 
@@ -32,7 +34,7 @@ extension MoviesViewController {
             }
             
             if let movies = movies {
-                Catalog.sharedInstance.categories[0].movies = movies.results
+                Catalog.sharedInstance.categories[categoryType.index()].movies = movies.results
             }
             
             DispatchQueue.main.async {

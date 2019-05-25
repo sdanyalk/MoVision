@@ -10,10 +10,20 @@ import Alamofire
 
 class APIClient {
     
-    class func getTopRatedMovies(completion: @escaping (Movies?, Error?) -> Void) {
+    class func getMovies(_ categoryType: CategoryType, completion: @escaping (Movies?, Error?) -> Void) {
+        let mainUrl: String
         let urlQueryParams = "&language=en-US&page=1"
         
-        AF.request(Endpoints.topRatedMovies.stringValue + urlQueryParams).responseDecodable { (response: DataResponse<Movies>) in
+        switch categoryType {
+        case .topRated:
+            mainUrl = Endpoints.topRatedMovies.stringValue
+        case .upComing:
+            mainUrl = Endpoints.upComingMovies.stringValue
+        case .nowPlaying:
+            mainUrl = Endpoints.nowPlayingMovies.stringValue
+        }
+        
+        AF.request(mainUrl + urlQueryParams).responseDecodable { (response: DataResponse<Movies>) in
             
             switch response.result {
             case .success(var movies):
