@@ -8,11 +8,11 @@
 
 import UIKit
 
-class CategoryTableViewCell: UITableViewCell {
+class CategoryMovieTableViewCell: UITableViewCell {
 
     @IBOutlet weak var moviesCollectionView: UICollectionView!
     
-    var category: Category? = nil {
+    var category: CategoryMovie? = nil {
         didSet {
             self.moviesCollectionView.reloadData()
         }
@@ -29,7 +29,7 @@ class CategoryTableViewCell: UITableViewCell {
 
 // MARK : - Collection View Data Source
 
-extension CategoryTableViewCell: UICollectionViewDataSource {
+extension CategoryMovieTableViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let category = category {
@@ -52,7 +52,7 @@ extension CategoryTableViewCell: UICollectionViewDataSource {
 
 // MARK : - Collection View Flow Layout
 
-extension CategoryTableViewCell : UICollectionViewDelegateFlowLayout {
+extension CategoryMovieTableViewCell : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let itemsPerRow: CGFloat = 3

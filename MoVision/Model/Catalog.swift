@@ -11,13 +11,19 @@ import Foundation
 class Catalog {
     
     static let sharedInstance = Catalog()
-    let categories:[Category]
+    let categoriesMovie: [CategoryMovie]
+    let categoriesTV: [CategoryTV]
     
     init(){
-        let topRated = Category(name: "Top Rated", movies: [])
-        let upComing = Category(name: "Up Coming", movies: [])
-        let nowPlaying = Category(name: "Now Playing", movies: [])
+        let topRatedMovies = CategoryMovie(name: "Top Rated", movies: [])
+        let upComingMovies = CategoryMovie(name: "Up Coming", movies: [])
+        let nowPlayingMovies = CategoryMovie(name: "Now Playing", movies: [])
 
-        categories = [topRated, upComing, nowPlaying]
+        let topRatedTVShows = CategoryTV(name: "Top Rated", tvShows: [])
+        let upComingTVShows = CategoryTV(name: "Up Coming", tvShows: [])
+        let nowPlayingTVShows = CategoryTV(name: "Now Playing", tvShows: [])
+
+        categoriesMovie = [topRatedMovies, upComingMovies, nowPlayingMovies]
+        categoriesTV = [topRatedTVShows, upComingTVShows, nowPlayingTVShows]
     }
 }

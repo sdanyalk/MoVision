@@ -1,47 +1,45 @@
 //
-//  Movie.swift
+//  TV.swift
 //  MoVision
 //
-//  Created by SDK on 5/25/19.
+//  Created by SDK on 5/26/19.
 //  Copyright © 2019 SDK. All rights reserved.
 //
 
 import Foundation
 
-struct Movie: Codable {
+struct TVShow: Codable {
     
     let id: Int
-    let title: String
-    let video: Bool
-    let originalLanguage: String
-    let originalTitle: String
+    let name: String
     let voteCount: Int
     let voteAverage: Float
+    let originalName: String
+    let originalLanguage: String
+    let originCountry: [String]
     let popularity: Float
     var posterPath: String?
     let backdropPath: String?
     let genreIds: [Int]
-    let adult: Bool
     let overview: String
-    let releaseDate: String
+    let firstAirDate: String
 }
 
-extension Movie {
+extension TVShow {
     
     enum CodingKeys: String, CodingKey {
         case id
-        case title
-        case video
-        case originalLanguage = "original_language"
-        case originalTitle = "original_title"
+        case name
         case voteCount = "vote_count"
         case voteAverage = "vote_average"
+        case originalName = "original_name"
+        case originalLanguage = "original_language"
+        case originCountry = "origin_country"
         case popularity
-        case posterPath = "poster_path"
         case backdropPath = "backdrop_path"
+        case posterPath = "poster_path"
         case genreIds = "genre_ids"
-        case adult
         case overview
-        case releaseDate = "release_date"
+        case firstAirDate = "first_air_date"
     }
 }

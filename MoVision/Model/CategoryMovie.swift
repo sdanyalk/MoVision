@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Category {
+class CategoryMovie {
     
     let name: String
     var movies: [Movie]

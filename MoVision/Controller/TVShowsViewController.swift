@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  SecondViewController.swift
 //  MoVision
 //
 //  Created by SDK on 5/20/19.
@@ -8,37 +8,37 @@
 
 import UIKit
 
-class MoviesViewController: UIViewController {
-    
-    @IBOutlet weak var moviesTableView: UITableView!
+class TVShowsViewController: UIViewController {
+
+    @IBOutlet weak var tvShowsTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getMovies(for: .topRated)
-        getMovies(for: .upComing)
-        getMovies(for: .nowPlaying)
+        getTVShows(for: .topRated)
+        getTVShows(for: .upComing)
+        getTVShows(for: .nowPlaying)
     }
 }
 
 // MARK : - Private Methods
 
-extension MoviesViewController {
+extension TVShowsViewController {
     
-    private func getMovies(for categoryType: CategoryType) {
-        APIClient.getMovies(categoryType) { movies, error in
+    private func getTVShows(for categoryType: CategoryType) {
+        APIClient.getTVShows(categoryType) { tvShows, error in
             if let error = error {
                 self.showError(withMessage: error.localizedDescription)
                 
                 return
             }
             
-            if let movies = movies {
-                Catalog.sharedInstance.categoriesMovie[categoryType.index()].movies = movies.results
+            if let tvShows = tvShows {
+                Catalog.sharedInstance.categoriesTV[categoryType.index()].tvShows = tvShows.results
             }
             
             DispatchQueue.main.async {
-                self.moviesTableView.reloadData()
+                self.tvShowsTableView.reloadData()
             }
         }
     }
@@ -46,7 +46,7 @@ extension MoviesViewController {
 
 // MARK : - Table View Data Source
 
-extension MoviesViewController: UITableViewDataSource {
+extension TVShowsViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return Catalog.sharedInstance.categoriesMovie.count
@@ -61,8 +61,8 @@ extension MoviesViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "categoryMovieCell", for: indexPath) as! CategoryMovieTableViewCell
-        cell.category = Catalog.sharedInstance.categoriesMovie[indexPath.section]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "categoryTVCell", for: indexPath) as! CategoryTVTableViewCell
+        cell.category = Catalog.sharedInstance.categoriesTV[indexPath.section]
         
         return cell
     }

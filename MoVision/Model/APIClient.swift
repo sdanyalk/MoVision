@@ -29,12 +29,49 @@ class APIClient {
             case .success(var movies):
                 movies.results = movies.results.map{ (movie: Movie) -> Movie in
                     var m = movie
-                    m.posterPath = "https://image.tmdb.org/t/p/w185/" + movie.posterPath
+                    if let posterPath = movie.posterPath {
+                        m.posterPath = "https://image.tmdb.org/t/p/w185/" + posterPath
+                    }
                     return m
                 }
                 
                 completion(movies, nil)
                 
+            case .failure(let error):
+                completion(nil, error)
+            }
+        }
+    }
+    
+    class func getTVShows(_ categoryType: CategoryType, completion: @escaping (TVShows?, Error?) -> Void) {
+        let mainUrl: String
+        let urlQueryParams = "&language=en-US&page=1"
+        
+        switch categoryType {
+        case .topRated:
+            mainUrl = Endpoints.topRatedTVShows.stringValue
+        case .upComing:
+            mainUrl = Endpoints.upComingTVShows.stringValue
+        case .nowPlaying:
+            mainUrl = Endpoints.nowPlayingTVShows.stringValue
+        }
+        
+        print(mainUrl + urlQueryParams)
+        
+        AF.request(mainUrl + urlQueryParams).responseDecodable { (response: DataResponse<TVShows>) in
+            
+            switch response.result {
+            case .success(var tvShows):
+                tvShows.results = tvShows.results.map{ (tvShow: TVShow) -> TVShow in
+                    var t = tvShow
+                    if let posterPath = tvShow.posterPath{
+                        t.posterPath = "https://image.tmdb.org/t/p/w185/" + posterPath
+                    }
+                    return t
+                }
+
+                completion(tvShows, nil)
+
             case .failure(let error):
                 completion(nil, error)
             }

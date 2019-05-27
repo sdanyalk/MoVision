@@ -15,7 +15,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
     
     var movie: Movie? = nil {
         didSet {
-            if let movie = movie, let url = URL(string: movie.posterPath) {
+            if let movie = movie, let posterPath = movie.posterPath, let url = URL(string: posterPath) {
                 self.moviePosterImageView.kf.indicatorType = .activity
                 self.moviePosterImageView.kf.setImage(with: url, placeholder: UIImage(named: "placeholder"), options: nil, progressBlock: nil) { result in
                     switch result {
