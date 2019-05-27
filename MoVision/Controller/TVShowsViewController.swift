@@ -19,6 +19,17 @@ class TVShowsViewController: UIViewController {
         getTVShows(for: .upComing)
         getTVShows(for: .nowPlaying)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "tvSegue" {
+            if let tvCell = sender as? TVCollectionViewCell,
+                let tvShow = tvCell.tvShow,
+                let detailVC = segue.destination as? DetailViewViewController {
+                
+                detailVC.tvShow = tvShow
+            }
+        }
+    }
 }
 
 // MARK : - Private Methods

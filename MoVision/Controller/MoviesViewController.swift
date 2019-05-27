@@ -19,6 +19,17 @@ class MoviesViewController: UIViewController {
         getMovies(for: .upComing)
         getMovies(for: .nowPlaying)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "movieSegue" {
+            if let movieCell = sender as? MovieCollectionViewCell,
+                let movie = movieCell.movie,
+                let detailVC = segue.destination as? DetailViewViewController {
+                
+                detailVC.movie = movie
+            }
+        }
+    }
 }
 
 // MARK : - Private Methods

@@ -43,7 +43,7 @@ extension CategoryTVTableViewCell: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tvCell", for: indexPath) as! TVCollectionViewCell
         
         if let category = category {
-            cell.tv = category.tvShows[indexPath.row]
+            cell.tvShow = category.tvShows[indexPath.row]
         }
         
         return cell

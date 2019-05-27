@@ -13,9 +13,9 @@ class TVCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var tvPosterImageView: UIImageView!
     
-    var tv: TVShow? = nil {
+    var tvShow: TVShow? = nil {
         didSet {
-            if let tv = tv, let posterPath = tv.posterPath, let url = URL(string: posterPath) {
+            if let tv = tvShow, let posterPath = tv.posterPath, let url = URL(string: posterPath) {
                 self.tvPosterImageView.kf.indicatorType = .activity
                 self.tvPosterImageView.kf.setImage(with: url, placeholder: UIImage(named: "placeholder"), options: nil, progressBlock: nil) { result in
                     switch result {

@@ -30,6 +30,7 @@
 		5AEA1C19229BBBAB00586209 /* TVShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA1C18229BBBAB00586209 /* TVShow.swift */; };
 		5AEA1C1B229BBCE000586209 /* CategoryTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA1C1A229BBCE000586209 /* CategoryTV.swift */; };
 		5AEA1C1D229BC0B400586209 /* TVShows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA1C1C229BC0B400586209 /* TVShows.swift */; };
+		5AEA1C21229C86EF00586209 /* DetailViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA1C20229C86EF00586209 /* DetailViewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		5AEA1C18229BBBAB00586209 /* TVShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShow.swift; sourceTree = "<group>"; };
 		5AEA1C1A229BBCE000586209 /* CategoryTV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTV.swift; sourceTree = "<group>"; };
 		5AEA1C1C229BC0B400586209 /* TVShows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShows.swift; sourceTree = "<group>"; };
+		5AEA1C20229C86EF00586209 /* DetailViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewViewController.swift; sourceTree = "<group>"; };
 		7099FAA0F0518F0D1A33B749 /* Pods-MoVision.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoVision.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoVision/Pods-MoVision.debug.xcconfig"; sourceTree = "<group>"; };
 		7F59B8B11602D0E4C63C905B /* Pods_MoVision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoVision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA598AD1AF3EF451CFE5FE57 /* Pods-MoVision.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoVision.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoVision/Pods-MoVision.release.xcconfig"; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				5AEA1BDE2293CB8500586209 /* MoviesViewController.swift */,
 				5AEA1BF22293CEFC00586209 /* ThirdViewController.swift */,
 				5AEA1BE02293CB8500586209 /* TVShowsViewController.swift */,
+				5AEA1C20229C86EF00586209 /* DetailViewViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				5AEA1BDF2293CB8500586209 /* MoviesViewController.swift in Sources */,
 				5AEA1C062299B74700586209 /* APIClient.swift in Sources */,
 				5AEA1C0F2299E7FE00586209 /* CategoryMovie.swift in Sources */,
+				5AEA1C21229C86EF00586209 /* DetailViewViewController.swift in Sources */,
 				5AEA1C13229A04C400586209 /* CategoryType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
