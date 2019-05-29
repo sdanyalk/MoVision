@@ -13,6 +13,8 @@ class Catalog {
     static let sharedInstance = Catalog()
     let categoriesMovie: [CategoryMovie]
     let categoriesTV: [CategoryTV]
+    let categoriesFavorite: [CategoryFavorite]
+    
     
     init(){
         let topRatedMovies = CategoryMovie(name: "Top Rated", movies: [])
@@ -22,8 +24,12 @@ class Catalog {
         let topRatedTVShows = CategoryTV(name: "Top Rated", tvShows: [])
         let upComingTVShows = CategoryTV(name: "Up Coming", tvShows: [])
         let nowPlayingTVShows = CategoryTV(name: "Now Playing", tvShows: [])
+        
+        let favoriteMovies = CategoryFavorite(name: "Liked Movies", favorites: [])
+        let favoriteTVShows = CategoryFavorite(name: "Liked TV Shows", favorites: [])
 
         categoriesMovie = [topRatedMovies, upComingMovies, nowPlayingMovies]
         categoriesTV = [topRatedTVShows, upComingTVShows, nowPlayingTVShows]
+        categoriesFavorite = [favoriteMovies, favoriteTVShows]
     }
 }

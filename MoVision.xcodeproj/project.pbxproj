@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		5520FF26670DDFD90CC86C5E /* Pods_MoVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F59B8B11602D0E4C63C905B /* Pods_MoVision.framework */; };
+		5A422ADB229DF906005AA4D2 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A422ADA229DF906005AA4D2 /* DataController.swift */; };
 		5AEA1BDD2293CB8500586209 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA1BDC2293CB8500586209 /* AppDelegate.swift */; };
 		5AEA1BDF2293CB8500586209 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA1BDE2293CB8500586209 /* MoviesViewController.swift */; };
 		5AEA1BE12293CB8500586209 /* TVShowsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA1BE02293CB8500586209 /* TVShowsViewController.swift */; };
 		5AEA1BE42293CB8500586209 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AEA1BE22293CB8500586209 /* Main.storyboard */; };
 		5AEA1BE62293CB8700586209 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AEA1BE52293CB8700586209 /* Assets.xcassets */; };
 		5AEA1BE92293CB8700586209 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AEA1BE72293CB8700586209 /* LaunchScreen.storyboard */; };
-		5AEA1BF32293CEFC00586209 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA1BF22293CEFC00586209 /* ThirdViewController.swift */; };
+		5AEA1BF32293CEFC00586209 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA1BF22293CEFC00586209 /* FavoritesViewController.swift */; };
 		5AEA1BF62293D30900586209 /* CategoryMovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA1BF52293D30900586209 /* CategoryMovieTableViewCell.swift */; };
 		5AEA1BF82293D51D00586209 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA1BF72293D51D00586209 /* MovieCollectionViewCell.swift */; };
 		5AEA1BFE229918D000586209 /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA1BFD229918D000586209 /* Movies.swift */; };
@@ -31,9 +32,14 @@
 		5AEA1C1B229BBCE000586209 /* CategoryTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA1C1A229BBCE000586209 /* CategoryTV.swift */; };
 		5AEA1C1D229BC0B400586209 /* TVShows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA1C1C229BC0B400586209 /* TVShows.swift */; };
 		5AEA1C21229C86EF00586209 /* DetailViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA1C20229C86EF00586209 /* DetailViewViewController.swift */; };
+		5AEA1C24229CB13900586209 /* MoVision.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA1C22229CB13900586209 /* MoVision.xcdatamodeld */; };
+		5AEA1C26229CB67300586209 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA1C25229CB67300586209 /* Favorite.swift */; };
+		5AEA1C28229CB6C000586209 /* CategoryFavorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA1C27229CB6C000586209 /* CategoryFavorite.swift */; };
+		5AEA1C2B229CE6CE00586209 /* CategoryFavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA1C2A229CE6CE00586209 /* CategoryFavoriteTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A422ADA229DF906005AA4D2 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		5AEA1BD92293CB8500586209 /* MoVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AEA1BDC2293CB8500586209 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AEA1BDE2293CB8500586209 /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
@@ -42,7 +48,7 @@
 		5AEA1BE52293CB8700586209 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5AEA1BE82293CB8700586209 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5AEA1BEA2293CB8700586209 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5AEA1BF22293CEFC00586209 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		5AEA1BF22293CEFC00586209 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		5AEA1BF52293D30900586209 /* CategoryMovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMovieTableViewCell.swift; sourceTree = "<group>"; };
 		5AEA1BF72293D51D00586209 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		5AEA1BFD229918D000586209 /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
@@ -60,6 +66,10 @@
 		5AEA1C1A229BBCE000586209 /* CategoryTV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTV.swift; sourceTree = "<group>"; };
 		5AEA1C1C229BC0B400586209 /* TVShows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShows.swift; sourceTree = "<group>"; };
 		5AEA1C20229C86EF00586209 /* DetailViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewViewController.swift; sourceTree = "<group>"; };
+		5AEA1C23229CB13900586209 /* MoVision.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MoVision.xcdatamodel; sourceTree = "<group>"; };
+		5AEA1C25229CB67300586209 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		5AEA1C27229CB6C000586209 /* CategoryFavorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFavorite.swift; sourceTree = "<group>"; };
+		5AEA1C2A229CE6CE00586209 /* CategoryFavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		7099FAA0F0518F0D1A33B749 /* Pods-MoVision.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoVision.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoVision/Pods-MoVision.debug.xcconfig"; sourceTree = "<group>"; };
 		7F59B8B11602D0E4C63C905B /* Pods_MoVision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoVision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA598AD1AF3EF451CFE5FE57 /* Pods-MoVision.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoVision.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoVision/Pods-MoVision.release.xcconfig"; sourceTree = "<group>"; };
@@ -92,6 +102,14 @@
 				CA598AD1AF3EF451CFE5FE57 /* Pods-MoVision.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		5A422AD9229DCBF1005AA4D2 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				5AEA1C052299B74700586209 /* APIClient.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		5AEA1BD02293CB8500586209 = {
@@ -140,10 +158,10 @@
 		5AEA1BF12293CBE200586209 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5AEA1BDE2293CB8500586209 /* MoviesViewController.swift */,
-				5AEA1BF22293CEFC00586209 /* ThirdViewController.swift */,
-				5AEA1BE02293CB8500586209 /* TVShowsViewController.swift */,
 				5AEA1C20229C86EF00586209 /* DetailViewViewController.swift */,
+				5AEA1BF22293CEFC00586209 /* FavoritesViewController.swift */,
+				5AEA1BDE2293CB8500586209 /* MoviesViewController.swift */,
+				5AEA1BE02293CB8500586209 /* TVShowsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -151,6 +169,7 @@
 		5AEA1BF42293D2EA00586209 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				5AEA1C29229CE6A600586209 /* Favorite */,
 				5AEA1C1E229C71D400586209 /* Movie */,
 				5AEA1C1F229C71E500586209 /* TV */,
 			);
@@ -160,12 +179,11 @@
 		5AEA1BFC2298DD7C00586209 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5A422AD9229DCBF1005AA4D2 /* Networking */,
 				5AEA1C0D2299E7D400586209 /* Data */,
 				5AEA1C072299BD8700586209 /* Shared */,
-				5AEA1C052299B74700586209 /* APIClient.swift */,
-				5AEA1C0E2299E7FE00586209 /* CategoryMovie.swift */,
-				5AEA1C102299E88300586209 /* Catalog.swift */,
-				5AEA1C1A229BBCE000586209 /* CategoryTV.swift */,
+				5AEA1C22229CB13900586209 /* MoVision.xcdatamodeld */,
+				5A422ADA229DF906005AA4D2 /* DataController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -190,6 +208,11 @@
 		5AEA1C0D2299E7D400586209 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				5AEA1C102299E88300586209 /* Catalog.swift */,
+				5AEA1C27229CB6C000586209 /* CategoryFavorite.swift */,
+				5AEA1C0E2299E7FE00586209 /* CategoryMovie.swift */,
+				5AEA1C1A229BBCE000586209 /* CategoryTV.swift */,
+				5AEA1C25229CB67300586209 /* Favorite.swift */,
 				5AEA1C032299B47800586209 /* Movie.swift */,
 				5AEA1BFD229918D000586209 /* Movies.swift */,
 				5AEA1C18229BBBAB00586209 /* TVShow.swift */,
@@ -214,6 +237,14 @@
 				5AEA1C16229BBAA300586209 /* TVCollectionViewCell.swift */,
 			);
 			path = TV;
+			sourceTree = "<group>";
+		};
+		5AEA1C29229CE6A600586209 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				5AEA1C2A229CE6CE00586209 /* CategoryFavoriteTableViewCell.swift */,
+			);
+			path = Favorite;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,16 +365,21 @@
 				5AEA1BDD2293CB8500586209 /* AppDelegate.swift in Sources */,
 				5AEA1BFE229918D000586209 /* Movies.swift in Sources */,
 				5AEA1C1B229BBCE000586209 /* CategoryTV.swift in Sources */,
+				5AEA1C2B229CE6CE00586209 /* CategoryFavoriteTableViewCell.swift in Sources */,
+				5AEA1C24229CB13900586209 /* MoVision.xcdatamodeld in Sources */,
 				5AEA1C092299BD9400586209 /* Endpoints.swift in Sources */,
+				5A422ADB229DF906005AA4D2 /* DataController.swift in Sources */,
 				5AEA1C112299E88300586209 /* Catalog.swift in Sources */,
 				5AEA1C17229BBAA300586209 /* TVCollectionViewCell.swift in Sources */,
 				5AEA1BF82293D51D00586209 /* MovieCollectionViewCell.swift in Sources */,
-				5AEA1BF32293CEFC00586209 /* ThirdViewController.swift in Sources */,
+				5AEA1BF32293CEFC00586209 /* FavoritesViewController.swift in Sources */,
 				5AEA1C042299B47800586209 /* Movie.swift in Sources */,
 				5AEA1C0C2299DB1500586209 /* ViewController+Extension.swift in Sources */,
 				5AEA1C15229BB9ED00586209 /* CategoryTVTableViewCell.swift in Sources */,
 				5AEA1BDF2293CB8500586209 /* MoviesViewController.swift in Sources */,
+				5AEA1C26229CB67300586209 /* Favorite.swift in Sources */,
 				5AEA1C062299B74700586209 /* APIClient.swift in Sources */,
+				5AEA1C28229CB6C000586209 /* CategoryFavorite.swift in Sources */,
 				5AEA1C0F2299E7FE00586209 /* CategoryMovie.swift in Sources */,
 				5AEA1C21229C86EF00586209 /* DetailViewViewController.swift in Sources */,
 				5AEA1C13229A04C400586209 /* CategoryType.swift in Sources */,
@@ -554,6 +590,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5AEA1C22229CB13900586209 /* MoVision.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5AEA1C23229CB13900586209 /* MoVision.xcdatamodel */,
+			);
+			currentVersion = 5AEA1C23229CB13900586209 /* MoVision.xcdatamodel */;
+			path = MoVision.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5AEA1BD12293CB8500586209 /* Project object */;
 }
