@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5520FF26670DDFD90CC86C5E /* Pods_MoVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F59B8B11602D0E4C63C905B /* Pods_MoVision.framework */; };
 		5A422ADB229DF906005AA4D2 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A422ADA229DF906005AA4D2 /* DataController.swift */; };
+		5A422ADF229F4411005AA4D2 /* EntertainmentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A422ADE229F4411005AA4D2 /* EntertainmentType.swift */; };
 		5AEA1BDD2293CB8500586209 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA1BDC2293CB8500586209 /* AppDelegate.swift */; };
 		5AEA1BDF2293CB8500586209 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA1BDE2293CB8500586209 /* MoviesViewController.swift */; };
 		5AEA1BE12293CB8500586209 /* TVShowsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEA1BE02293CB8500586209 /* TVShowsViewController.swift */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		5A422ADA229DF906005AA4D2 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		5A422ADE229F4411005AA4D2 /* EntertainmentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntertainmentType.swift; sourceTree = "<group>"; };
 		5AEA1BD92293CB8500586209 /* MoVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AEA1BDC2293CB8500586209 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AEA1BDE2293CB8500586209 /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 			children = (
 				5AEA1C12229A04C400586209 /* CategoryType.swift */,
 				5AEA1C082299BD9400586209 /* Endpoints.swift */,
+				5A422ADE229F4411005AA4D2 /* EntertainmentType.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				5AEA1C15229BB9ED00586209 /* CategoryTVTableViewCell.swift in Sources */,
 				5AEA1BDF2293CB8500586209 /* MoviesViewController.swift in Sources */,
 				5AEA1C26229CB67300586209 /* Favorite.swift in Sources */,
+				5A422ADF229F4411005AA4D2 /* EntertainmentType.swift in Sources */,
 				5AEA1C062299B74700586209 /* APIClient.swift in Sources */,
 				5AEA1C28229CB6C000586209 /* CategoryFavorite.swift in Sources */,
 				5AEA1C0F2299E7FE00586209 /* CategoryMovie.swift in Sources */,

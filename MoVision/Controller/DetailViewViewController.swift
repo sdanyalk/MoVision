@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class DetailViewViewController: UIViewController {
 
@@ -19,17 +20,26 @@ class DetailViewViewController: UIViewController {
     
     var movie: Movie?
     var tvShow: TVShow?
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let movie = movie {
-            setupMovieDetailView(movie);
+            setupMovieDetailView(movie)
         } else if let tvShow = tvShow {
             setupTVShowDetailView(tvShow)
         }
     }
+    
+    @IBAction func favButtonClicked(_ sender: Any) {
+        if let movie = movie {
+            saveFavoriteMovie(movie)
+        }
+    }
 }
+
+// MARK : - Private Methods
 
 extension DetailViewViewController {
     
@@ -58,10 +68,30 @@ extension DetailViewViewController {
             self.posterImageView.kf.setImage(with: URL(string: posterPath), placeholder: UIImage(named: "placeholder"), options: nil, progressBlock: nil) { result in
             switch result {
             case .success(let value):
+                self.movie?.posterImageData = value.image.pngData()
+                
                 print("Image: \(value.image). Got from: \(value.cacheType)")
             case .failure(let error):
                 print("Error: \(error)")
             }
         }
+    }
+    
+    private func saveFavoriteMovie(_ movie: Movie) {
+        let favorite = Favorites(context: appDelegate.dataController.viewContext)
+
+        favorite.category = EntertainmentType.movie.description()
+        favorite.title = movie.title
+        favorite.releaseDate = movie.releaseDate
+        favorite.overview = movie.overview
+        favorite.creationDate = Date()
+        favorite.data = movie.posterImageData
+        
+        let voteCountStr = String (movie.voteCount)
+        if let voteCount = Int32(voteCountStr) {
+            favorite.voteCount = voteCount
+        }
+        
+        try? appDelegate.dataController.viewContext.save()
     }
 }

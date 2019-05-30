@@ -10,11 +10,10 @@ import UIKit
 
 class CategoryFavoriteTableViewCell: UITableViewCell {
     
-    var category: CategoryFavorite? = nil {
-        didSet {
-//            self.favoriteCollectionView.reloadData()
-        }
-    }
+    @IBOutlet weak var posterImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    var favorite: Favorites?
     
     override func awakeFromNib() {
         super.awakeFromNib()

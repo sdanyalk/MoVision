@@ -24,6 +24,7 @@ struct Movie: Codable {
     let adult: Bool
     let overview: String
     let releaseDate: String
+    var posterImageData: Data?
 }
 
 extension Movie {
@@ -43,5 +44,6 @@ extension Movie {
         case adult
         case overview
         case releaseDate = "release_date"
+        case posterImageData
     }
 }
