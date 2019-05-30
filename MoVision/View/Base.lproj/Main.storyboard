@@ -332,6 +332,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="Y52-qr-cBc" userLabel="Favorites"/>
                     <navigationItem key="navigationItem" id="bUC-LP-5Mi"/>
+                    <connections>
+                        <outlet property="favoriteTableView" destination="zmA-a9-dHb" id="F48-VS-1oX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kC3-1h-XA9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

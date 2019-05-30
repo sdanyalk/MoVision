@@ -23,6 +23,7 @@ struct TVShow: Codable {
     let genreIds: [Int]
     let overview: String
     let firstAirDate: String
+    var posterImageData: Data?
 }
 
 extension TVShow {
@@ -41,5 +42,6 @@ extension TVShow {
         case genreIds = "genre_ids"
         case overview
         case firstAirDate = "first_air_date"
+        case posterImageData
     }
 }

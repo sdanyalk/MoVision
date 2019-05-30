@@ -11,17 +11,31 @@ import CoreData
 
 class FavoritesViewController: UIViewController {
     
+    @IBOutlet weak var favoriteTableView: UITableView!
+    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var fetchedFavMoviesResultsController: NSFetchedResultsController<Favorites>!
+    var fetchedFavTVShowsResultsController: NSFetchedResultsController<Favorites>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupFavMoviesFetchedResultsController()
+        setupFetchedResultsController(for: .movie)
+        setupFetchedResultsController(for: .tvShow)
+        
+        favoriteTableView.reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         fetchedFavMoviesResultsController = nil
+        fetchedFavTVShowsResultsController = nil
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setupFetchedResultsController(for: .movie)
+        setupFetchedResultsController(for: .tvShow)
+        
+        favoriteTableView.reloadData()
     }
 }
 
@@ -34,6 +48,10 @@ extension FavoritesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (section == 0) {
             if let count = fetchedFavMoviesResultsController.fetchedObjects?.count {
+                return count
+            }
+        } else if (section == 1) {
+            if let count = fetchedFavTVShowsResultsController.fetchedObjects?.count {
                 return count
             }
         }
@@ -49,7 +67,9 @@ extension FavoritesViewController: UITableViewDataSource {
         var favorite: Favorites?
         
         if indexPath.section == 0 {
-            favorite = fetchedFavMoviesResultsController.object(at: indexPath)
+            favorite = fetchedFavMoviesResultsController.fetchedObjects![indexPath.row]
+        } else if indexPath.section == 1 {
+            favorite = fetchedFavTVShowsResultsController.fetchedObjects![indexPath.row]
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "categoryFavoriteCell", for: indexPath) as! CategoryFavoriteTableViewCell
@@ -70,25 +90,42 @@ extension FavoritesViewController: UITableViewDataSource {
 
 extension FavoritesViewController: NSFetchedResultsControllerDelegate {
     
-    private func setupFavMoviesFetchedResultsController() {
+    private func setupFetchedResultsController(for entertainmentType: EntertainmentType) {
         let fetchRequest: NSFetchRequest<Favorites> = Favorites.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key: "creationDate", ascending: false)
-        let predicate = NSPredicate(format: "category == %@", EntertainmentType.movie.description())
+        let predicate = NSPredicate(format: "category == %@", entertainmentType.description())
         
         fetchRequest.sortDescriptors = [sortDescriptor]
         fetchRequest.predicate = predicate
         
-        fetchedFavMoviesResultsController = NSFetchedResultsController(
-            fetchRequest: fetchRequest,
-            managedObjectContext: appDelegate.dataController.viewContext,
-            sectionNameKeyPath: nil,
-            cacheName: nil)
-        fetchedFavMoviesResultsController.delegate = self
-        
-        do {
-            try fetchedFavMoviesResultsController.performFetch()
-        } catch {
-            fatalError("The fetch could not be performed: \(error.localizedDescription)")
+        switch entertainmentType {
+        case .movie:
+            fetchedFavMoviesResultsController = NSFetchedResultsController(
+                fetchRequest: fetchRequest,
+                managedObjectContext: appDelegate.dataController.viewContext,
+                sectionNameKeyPath: nil,
+                cacheName: nil)
+            fetchedFavMoviesResultsController.delegate = self
+            
+            do {
+                try fetchedFavMoviesResultsController.performFetch()
+            } catch {
+                fatalError("The fetch could not be performed: \(error.localizedDescription)")
+            }
+            
+        case .tvShow:
+            fetchedFavTVShowsResultsController = NSFetchedResultsController(
+                fetchRequest: fetchRequest,
+                managedObjectContext: appDelegate.dataController.viewContext,
+                sectionNameKeyPath: nil,
+                cacheName: nil)
+            fetchedFavTVShowsResultsController.delegate = self
+            
+            do {
+                try fetchedFavTVShowsResultsController.performFetch()
+            } catch {
+                fatalError("The fetch could not be performed: \(error.localizedDescription)")
+            }
         }
     }
 }

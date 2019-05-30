@@ -36,6 +36,10 @@ class DetailViewViewController: UIViewController {
         if let movie = movie {
             saveFavoriteMovie(movie)
         }
+        
+        if let tvShow = tvShow {
+            saveFavoriteTVShow(tvShow)
+        }
     }
 }
 
@@ -49,7 +53,7 @@ extension DetailViewViewController {
         votesTextField.text = String (movie.voteCount)
         overviewTextView.text = movie.overview
         if let posterPath = movie.posterPath {
-            setupPosterImageView(posterPath)
+            setupPosterImageView(posterPath, .movie)
         }
     }
     
@@ -59,16 +63,20 @@ extension DetailViewViewController {
         votesTextField.text = String (tvShow.voteCount)
         overviewTextView.text = tvShow.overview
         if let posterPath = tvShow.posterPath {
-            setupPosterImageView(posterPath)
+            setupPosterImageView(posterPath, .tvShow)
         }
     }
     
-    private func setupPosterImageView(_ posterPath: String) {
+    private func setupPosterImageView(_ posterPath: String, _ entertainmentType: EntertainmentType) {
             self.posterImageView.kf.indicatorType = .activity
             self.posterImageView.kf.setImage(with: URL(string: posterPath), placeholder: UIImage(named: "placeholder"), options: nil, progressBlock: nil) { result in
             switch result {
             case .success(let value):
-                self.movie?.posterImageData = value.image.pngData()
+                if entertainmentType == .movie {
+                    self.movie?.posterImageData = value.image.pngData()
+                } else if entertainmentType == .tvShow {
+                    self.tvShow?.posterImageData = value.image.pngData()
+                }
                 
                 print("Image: \(value.image). Got from: \(value.cacheType)")
             case .failure(let error):
@@ -88,6 +96,24 @@ extension DetailViewViewController {
         favorite.data = movie.posterImageData
         
         let voteCountStr = String (movie.voteCount)
+        if let voteCount = Int32(voteCountStr) {
+            favorite.voteCount = voteCount
+        }
+        
+        try? appDelegate.dataController.viewContext.save()
+    }
+    
+    private func saveFavoriteTVShow(_ tvShow: TVShow) {
+        let favorite = Favorites(context: appDelegate.dataController.viewContext)
+        
+        favorite.category = EntertainmentType.tvShow.description()
+        favorite.title = tvShow.name
+        favorite.releaseDate = tvShow.firstAirDate
+        favorite.overview = tvShow.overview
+        favorite.creationDate = Date()
+        favorite.data = tvShow.posterImageData
+        
+        let voteCountStr = String (tvShow.voteCount)
         if let voteCount = Int32(voteCountStr) {
             favorite.voteCount = voteCount
         }
