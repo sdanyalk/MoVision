@@ -86,6 +86,31 @@ extension FavoritesViewController: UITableViewDataSource {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            var favorite: Favorites?
+            
+            if indexPath.section == 0 {
+                favorite = fetchedFavMoviesResultsController.fetchedObjects![indexPath.row]
+            } else if indexPath.section == 1 {
+                favorite = fetchedFavTVShowsResultsController.fetchedObjects![indexPath.row]
+            }
+            
+            if let favorite = favorite {
+                self.favoriteTableView.beginUpdates()
+                appDelegate.dataController.viewContext.delete(favorite)
+                
+                do {
+                    try appDelegate.dataController.viewContext.save()
+                    self.favoriteTableView.deleteRows(at: [indexPath], with: .right)
+                } catch {
+                    self.showError(withMessage: error.localizedDescription)
+                }
+                self.favoriteTableView.endUpdates()
+            }
+        }
+    }
 }
 
 extension FavoritesViewController: NSFetchedResultsControllerDelegate {
@@ -126,6 +151,19 @@ extension FavoritesViewController: NSFetchedResultsControllerDelegate {
             } catch {
                 fatalError("The fetch could not be performed: \(error.localizedDescription)")
             }
+        }
+    }
+    
+    internal func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
+                             didChange anObject: Any,
+                             at indexPath: IndexPath?,
+                             for type: NSFetchedResultsChangeType,
+                             newIndexPath: IndexPath?) {
+        switch type {
+        case .delete:
+            self.favoriteTableView.reloadData()
+            break
+        default: ()
         }
     }
 }
