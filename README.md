@@ -78,7 +78,15 @@ If you want to remove any movie or tv show from your favorites, all you have to 
 
 ## User Interface
 
-### Movies List
+### Movie List
 
-List of movies divided into three categories: **Top Rated**, **Up Coming** and **Now Playing**
+Movies are divided into three categories: **Top Rated**, **Up Coming** and **Now Playing**
+
+![alt text](Screenshots/MoviesTab.png "Movies Tab Title")
+
+### TV Show List
+
+TV shows are divided into three categories: **Top Rated**, **Up Coming** and **Now Playing**
+
+![alt text](Screenshots/TVShowsTab.png "TV Shows Tab Title")
 
