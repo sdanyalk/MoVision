@@ -18,7 +18,7 @@ enum Endpoints {
     static let nowPlaying = "/now_playing"
     static let onTheAir = "/on_the_air"
     static let airingToday = "/airing_today"
-    static let apiKey = "?api_key=905709cfa9a7ae09553359bacc85b23b"
+    static let apiKey = "?api_key=" + TMBDAPIKey.APIKey
     
     case topRatedMovies
     case upComingMovies
