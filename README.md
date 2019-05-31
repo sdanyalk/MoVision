@@ -8,7 +8,7 @@ This is my final project in iOS nano-degree program.
 * [Details](#details)<br />
 * [User Interface](#ui)<br />
 * [Demo](#demo)<br />
-* [Feature Wishlist](#features)
+* [Future List](#future)
 
 <a name="req">
 
@@ -78,15 +78,40 @@ If you want to remove any movie or tv show from your favorites, all you have to 
 
 ## User Interface
 
-### Movie List
+### Movie List and Detail
 
 Movies are divided into three categories: **Top Rated**, **Up Coming** and **Now Playing**
 
-![alt text](Screenshots/MoviesTab.png "Movies Tab Title")
+<img src="Screenshots/MoviesTab.png" alt="Movies Tab" width="275" height="550">
+<img src="Screenshots/MovieDetail.png" alt="Movie Detail" width="275" height="550">
 
 ### TV Show List
 
 TV shows are divided into three categories: **Top Rated**, **Up Coming** and **Now Playing**
 
-![alt text](Screenshots/TVShowsTab.png "TV Shows Tab Title")
+<img src="Screenshots/TVShowsTab.png" alt="TV Show Tab" width="275" height="550">
+<img src="Screenshots/TVShowDetail.png" alt="TV Show Detail" width="275" height="550">
 
+### Favorite List
+
+Favorites are divided into two categories: **Liked Movies** and **Liked TV Shows**
+
+<img src="Screenshots/FavoritesTab.png" alt="Favorite Tab" width="275" height="550">
+
+<a name="demo">
+
+## Demo
+
+![alt text](https://thumbs.gfycat.com/AnnualFlawedArawana-size_restricted.gif "Demo.gif")
+
+<a name="future">
+
+## Future List
+
+Some ideas for additional features:
+
+* Authentication with TMDB
+* Sorting functionality
+* Switch between grid/list view of favorites
+* Add search functionality
+* Include Movie/TV Show ratings
