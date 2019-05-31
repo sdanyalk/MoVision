@@ -37,13 +37,23 @@ class DetailViewViewController: UIViewController {
         setupFavoriteButton()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        fetchedIdResultsController = nil
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let movie = movie {
+            setupFetchedResultsController(for: movie.id)
+        } else if let tvShow = tvShow {
+            setupFetchedResultsController(for: tvShow.id)
+        }
+    }
+    
     @IBAction func favButtonClicked(_ sender: Any) {
         if favButton.currentImage == UIImage(named: "fav") {
             favButton.setImage(UIImage(named: "unfav"), for: .normal)
             
-            if let movie = movie {
-                deleteFavoriteMovie(movie)
-            }
+            deleteFavorite()
         } else {
             favButton.setImage(UIImage(named: "fav"), for: .normal)
             
@@ -122,7 +132,7 @@ extension DetailViewViewController {
         try? appDelegate.dataController.viewContext.save()
     }
     
-    private func deleteFavoriteMovie(_ movie: Movie) {
+    private func deleteFavorite() {
         let favorite: Favorites = fetchedIdResultsController.fetchedObjects![0]
         
         appDelegate.dataController.viewContext.delete(favorite)
