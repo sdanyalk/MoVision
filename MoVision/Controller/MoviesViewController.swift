@@ -79,6 +79,8 @@ extension MoviesViewController: UITableViewDataSource {
     }
 }
 
+// MARK : - Table View Delegate
+
 extension MoviesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {

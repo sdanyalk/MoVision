@@ -78,3 +78,16 @@ extension TVShowsViewController: UITableViewDataSource {
         return cell
     }
 }
+
+// MARK : - Table View Delegate
+
+extension TVShowsViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        view.tintColor = UIColor.black
+        
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = UIColor.white
+        header.textLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+    }
+}
