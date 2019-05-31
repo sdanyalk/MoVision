@@ -97,3 +97,9 @@ TV shows are divided into three categories: **Top Rated**, **Up Coming** and **N
 Favorites are divided into two categories: **Liked Movies** and **Liked TV Shows**
 
 <img src="Screenshots/FavoritesTab.png" alt="Favorite Tab" width="275" height="550">
+
+<a name="demo">
+
+## Demo
+
+![alt text](https://gfycat.com/AnnualFlawedArawana "Demo.gif")
