@@ -21,30 +21,39 @@ class DetailViewViewController: UIViewController {
     var movie: Movie?
     var tvShow: TVShow?
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var fetchedIdResultsController: NSFetchedResultsController<Favorites>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let movie = movie {
             setupMovieDetailView(movie)
+            setupFetchedResultsController(for: movie.id)
         } else if let tvShow = tvShow {
             setupTVShowDetailView(tvShow)
+            setupFetchedResultsController(for: tvShow.id)
         }
+
+        setupFavoriteButton()
     }
     
     @IBAction func favButtonClicked(_ sender: Any) {
-        if let movie = movie {
-            saveFavoriteMovie(movie)
-        }
-        
-        if let tvShow = tvShow {
-            saveFavoriteTVShow(tvShow)
-        }
-        
         if favButton.currentImage == UIImage(named: "fav") {
             favButton.setImage(UIImage(named: "unfav"), for: .normal)
+            
+            if let movie = movie {
+                deleteFavoriteMovie(movie)
+            }
         } else {
             favButton.setImage(UIImage(named: "fav"), for: .normal)
+            
+            if let movie = movie {
+                saveFavoriteMovie(movie)
+            }
+            
+            if let tvShow = tvShow {
+                saveFavoriteTVShow(tvShow)
+            }
         }
     }
 }
@@ -94,6 +103,10 @@ extension DetailViewViewController {
     private func saveFavoriteMovie(_ movie: Movie) {
         let favorite = Favorites(context: appDelegate.dataController.viewContext)
 
+        let idStr = String (movie.id)
+        if let id = Int32(idStr) {
+            favorite.id = id
+        }
         favorite.category = EntertainmentType.movie.description()
         favorite.title = movie.title
         favorite.releaseDate = movie.releaseDate
@@ -109,9 +122,19 @@ extension DetailViewViewController {
         try? appDelegate.dataController.viewContext.save()
     }
     
+    private func deleteFavoriteMovie(_ movie: Movie) {
+        let favorite: Favorites = fetchedIdResultsController.fetchedObjects![0]
+        
+        appDelegate.dataController.viewContext.delete(favorite)
+    }
+    
     private func saveFavoriteTVShow(_ tvShow: TVShow) {
         let favorite = Favorites(context: appDelegate.dataController.viewContext)
         
+        let idStr = String (tvShow.id)
+        if let id = Int32(idStr) {
+            favorite.id = id
+        }
         favorite.category = EntertainmentType.tvShow.description()
         favorite.title = tvShow.name
         favorite.releaseDate = tvShow.firstAirDate
@@ -125,5 +148,46 @@ extension DetailViewViewController {
         }
         
         try? appDelegate.dataController.viewContext.save()
+    }
+    
+    private func setupFavoriteButton() {
+        let resultCount = fetchedIdResultsController.fetchedObjects?.count
+        
+        if let resultCount = resultCount {
+            if resultCount > 0 {
+                favButton.setImage(UIImage(named: "fav"), for: .normal)
+            } else {
+                favButton.setImage(UIImage(named: "unfav"), for: .normal)
+            }
+        } else {
+            favButton.setImage(UIImage(named: "unfav"), for: .normal)
+        }
+    }
+}
+
+// MARK : - Fetched Results Core Data Delegate
+
+extension DetailViewViewController: NSFetchedResultsControllerDelegate {
+    
+    private func setupFetchedResultsController(for id: Int) {
+        let fetchRequest: NSFetchRequest<Favorites> = Favorites.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "creationDate", ascending: false)
+        let predicate = NSPredicate(format: "id == %d", id)
+        
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        fetchRequest.predicate = predicate
+        
+        fetchedIdResultsController = NSFetchedResultsController(
+            fetchRequest: fetchRequest,
+            managedObjectContext: appDelegate.dataController.viewContext,
+            sectionNameKeyPath: nil,
+            cacheName: nil)
+        fetchedIdResultsController.delegate = self
+        
+        do {
+            try fetchedIdResultsController.performFetch()
+        } catch {
+            fatalError("The fetch could not be performed: \(error.localizedDescription)")
+        }
     }
 }

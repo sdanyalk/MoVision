@@ -4,6 +4,7 @@
         <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="creationDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="data" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="overview" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="posterPath" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="releaseDate" optional="YES" attributeType="String" syncable="YES"/>
@@ -11,6 +12,6 @@
         <attribute name="voteCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Favorites" positionX="-45" positionY="0" width="128" height="165"/>
+        <element name="Favorites" positionX="-45" positionY="0" width="128" height="180"/>
     </elements>
 </model>
