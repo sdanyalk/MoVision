@@ -18,20 +18,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="175" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hCV-16-Scz">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="175" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hCV-16-Scz">
                                 <rect key="frame" x="16" y="64" width="343" height="554"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryMovieCell" rowHeight="137" id="7gD-EU-Prs" customClass="CategoryMovieTableViewCell" customModule="MoVision" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="137"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7gD-EU-Prs" id="9PH-xn-YtN">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="136.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="137"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lkN-eh-d99">
                                                     <rect key="frame" x="0.0" y="0.0" width="343" height="136.5"/>
-                                                    <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="5" id="n74-bd-bib">
                                                         <size key="itemSize" width="133" height="124"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -51,7 +56,7 @@
                                                                     </imageView>
                                                                 </subviews>
                                                             </view>
-                                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                             <constraints>
                                                                 <constraint firstItem="vxp-b7-IVv" firstAttribute="leading" secondItem="7r1-lH-A8f" secondAttribute="leading" id="BXf-rF-Nue"/>
                                                                 <constraint firstItem="vxp-b7-IVv" firstAttribute="top" secondItem="7r1-lH-A8f" secondAttribute="top" id="Lwb-5M-VcF"/>
@@ -70,6 +75,7 @@
                                                     </connections>
                                                 </collectionView>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="lkN-eh-d99" firstAttribute="leading" secondItem="9PH-xn-YtN" secondAttribute="leading" id="Y0i-pB-vOR"/>
                                                 <constraint firstItem="lkN-eh-d99" firstAttribute="top" secondItem="9PH-xn-YtN" secondAttribute="top" id="chb-Tp-QpU"/>
@@ -77,7 +83,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="lkN-eh-d99" secondAttribute="trailing" id="wuB-uw-M59"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <connections>
                                             <outlet property="moviesCollectionView" destination="lkN-eh-d99" id="aQF-RZ-GYh"/>
                                         </connections>
@@ -85,10 +91,11 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="9pv-A4-QxB" id="ZdU-h9-vhX"/>
+                                    <outlet property="delegate" destination="9pv-A4-QxB" id="cDe-Tx-qji"/>
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
                             <constraint firstItem="hCV-16-Scz" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="6kM-ax-SL6"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="hCV-16-Scz" secondAttribute="trailing" constant="16" id="ZkP-1w-jyu"/>
@@ -479,6 +486,6 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7mL-ut-Thx"/>
+        <segue reference="dz8-BF-TQb"/>
     </inferredMetricsTieBreakers>
 </document>

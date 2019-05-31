@@ -78,3 +78,14 @@ extension MoviesViewController: UITableViewDataSource {
         return cell
     }
 }
+
+extension MoviesViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        view.tintColor = UIColor.black
+        
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = UIColor.white
+        header.textLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+    }
+}
