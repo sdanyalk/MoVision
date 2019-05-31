@@ -55,3 +55,22 @@ If you want to remove any movie or tv show from your favorites, all you have to 
 * Detail view controller is presented from Movies and TV Shows view controllers.
 * Movies and TV Shows controllers contains a horizonatal collection view to show the poster images.
 * Favorites view controller contains a table view to show poster image and title.
+
+### Networking
+
+* The Movie Database API is used to retrieve both the movies and tv shows. Information like:
+  - Title
+  - Poster
+  - Release Date
+  - Number of Votes
+  - Average number of votes
+* While an online search is in progress, an Activity Indicator is displayed.
+* An alert view will be displayed, if there was a network error.
+* The poster image, once retrieved, will be cached to reduce network requests.
+
+### Persistence
+
+* Favorite Movies and TV shows are stored in Core Data.
+* Constraints favorite movie and tv show duplicates.
+* Movie and TV shows are sorted by latest date.
+
