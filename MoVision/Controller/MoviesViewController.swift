@@ -11,9 +11,12 @@ import UIKit
 class MoviesViewController: UIViewController {
     
     @IBOutlet weak var moviesTableView: UITableView!
+    @IBOutlet weak var loadingIndicatorView: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loadingIndicatorView.isHidden = true
         
         getMovies(for: .topRated)
         getMovies(for: .upComing)
@@ -37,6 +40,9 @@ class MoviesViewController: UIViewController {
 extension MoviesViewController {
     
     private func getMovies(for categoryType: CategoryType) {
+        loadingIndicatorView.isHidden = false
+        loadingIndicatorView.startAnimating()
+        
         APIClient.getMovies(categoryType) { movies, error in
             if let error = error {
                 self.showError(withMessage: error.localizedDescription)
@@ -50,6 +56,9 @@ extension MoviesViewController {
             
             DispatchQueue.main.async {
                 self.moviesTableView.reloadData()
+                
+                self.loadingIndicatorView.isHidden = true
+                self.loadingIndicatorView.stopAnimating()
             }
         }
     }

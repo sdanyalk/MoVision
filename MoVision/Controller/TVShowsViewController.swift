@@ -11,9 +11,12 @@ import UIKit
 class TVShowsViewController: UIViewController {
 
     @IBOutlet weak var tvShowsTableView: UITableView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loadingIndicator.isHidden = true
         
         getTVShows(for: .topRated)
         getTVShows(for: .upComing)
@@ -37,6 +40,9 @@ class TVShowsViewController: UIViewController {
 extension TVShowsViewController {
     
     private func getTVShows(for categoryType: CategoryType) {
+        loadingIndicator.isHidden = false
+        loadingIndicator.startAnimating()
+        
         APIClient.getTVShows(categoryType) { tvShows, error in
             if let error = error {
                 self.showError(withMessage: error.localizedDescription)
@@ -50,6 +56,9 @@ extension TVShowsViewController {
             
             DispatchQueue.main.async {
                 self.tvShowsTableView.reloadData()
+                
+                self.loadingIndicator.stopAnimating()
+                self.loadingIndicator.isHidden = true
             }
         }
     }

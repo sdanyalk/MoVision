@@ -25,6 +25,11 @@
                                 <color key="sectionIndexColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" id="pXV-rH-VFQ">
+                                    <rect key="frame" x="0.0" y="165" width="343" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </activityIndicatorView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryMovieCell" rowHeight="137" id="7gD-EU-Prs" customClass="CategoryMovieTableViewCell" customModule="MoVision" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="137"/>
@@ -107,6 +112,7 @@
                     <tabBarItem key="tabBarItem" title="Movies" image="movie" id="acW-dT-cKf" userLabel="Movies"/>
                     <navigationItem key="navigationItem" id="iVg-MX-NJy"/>
                     <connections>
+                        <outlet property="loadingIndicatorView" destination="pXV-rH-VFQ" id="yjL-Av-iJR"/>
                         <outlet property="moviesTableView" destination="hCV-16-Scz" id="HyY-BU-qOE"/>
                     </connections>
                 </viewController>
@@ -368,6 +374,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="175" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hsT-p2-fE7">
                                 <rect key="frame" x="16" y="64" width="343" height="554"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" id="6nC-aP-UMW">
+                                    <rect key="frame" x="0.0" y="165" width="343" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </activityIndicatorView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryTVCell" rowHeight="137" id="3oa-SP-3Lm" customClass="CategoryTVTableViewCell" customModule="MoVision" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="137"/>
@@ -448,6 +458,7 @@
                     <tabBarItem key="tabBarItem" title="TV Shows" image="tv" id="cPa-gy-q4n" userLabel="TVShows"/>
                     <navigationItem key="navigationItem" id="KFh-yQ-do3"/>
                     <connections>
+                        <outlet property="loadingIndicator" destination="6nC-aP-UMW" id="2Wf-zE-9u8"/>
                         <outlet property="tvShowsTableView" destination="hsT-p2-fE7" id="WaJ-A9-XfC"/>
                     </connections>
                 </viewController>
@@ -484,6 +495,6 @@
         <image name="unfav" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7mL-ut-Thx"/>
+        <segue reference="dz8-BF-TQb"/>
     </inferredMetricsTieBreakers>
 </document>
