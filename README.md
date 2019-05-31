@@ -6,7 +6,7 @@ This is my final project in iOS nano-degree program.
 * [Installation](#install)<br />
 * [Description](#description)<br />
 * [Details](#details)<br />
-* [UI](#ui)<br />
+* [User Interface](#ui)<br />
 * [Demo](#demo)<br />
 * [Feature Wishlist](#features)
 
@@ -73,4 +73,12 @@ If you want to remove any movie or tv show from your favorites, all you have to 
 * Favorite Movies and TV shows are stored in Core Data.
 * Constraints favorite movie and tv show duplicates.
 * Movie and TV shows are sorted by latest date.
+
+<a name="ui">
+
+## User Interface
+
+### Movies List
+
+List of movies divided into three categories: **Top Rated**, **Up Coming** and **Now Playing**
 
