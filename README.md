@@ -5,7 +5,7 @@ This is my final project in iOS nano-degree program.
 * [Requirements](#req)<br />
 * [Installation](#install)<br />
 * [Description](#description)<br />
-* [Details](#projectdetails)<br />
+* [Details](#details)<br />
 * [UI](#ui)<br />
 * [Demo](#demo)<br />
 * [Feature Wishlist](#features)
@@ -32,10 +32,26 @@ This is my final project in iOS nano-degree program.
 
 ## Description
 
-This is one stop app for all your entertainment needs. It shows a list of movie and tv shows. These are divided into three categories. Categories are top rated, up coming and currently playing/showing.
+This is a one stop app for all your entertainment needs. It shows a list of movie and tv shows. These are divided into three categories. Categories are top rated, up coming and currently playing/showing.
 
 You can click on any movie or tv show to see more details about it.
 
 In addition to that you can also mark any movie and/or tv show as a favorite. This will create a separate list of all your favorite movies and/or tv shows.
 
 If you want to remove any movie or tv show from your favorites, all you have to do is swipe left and it will be deleted. Other way you can do is by going into the detail screen and unselecting the **heart** button.
+
+<a name="details">
+
+## Details
+
+### User Interface
+
+* There are 4 controllers:
+  - Movies view controller
+  - TV Shows view controller
+  - Favorites view controller
+  - Detail view controller
+* The first 3 view controllers are part of tab bar controller.
+* Detail view controller is presented from Movies and TV Shows view controllers.
+* Movies and TV Shows controllers contains a horizonatal collection view to show the poster images.
+* Favorites view controller contains a table view to show poster image and title.
