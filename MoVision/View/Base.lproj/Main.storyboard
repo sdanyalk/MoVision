@@ -452,7 +452,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="TV Shows" image="second" id="cPa-gy-q4n" userLabel="TVShows"/>
+                    <tabBarItem key="tabBarItem" title="TV Shows" image="tv" id="cPa-gy-q4n" userLabel="TVShows"/>
                     <navigationItem key="navigationItem" id="KFh-yQ-do3"/>
                     <connections>
                         <outlet property="tvShowsTableView" destination="hsT-p2-fE7" id="WaJ-A9-XfC"/>
@@ -485,7 +485,7 @@
     <resources>
         <image name="movie" width="30" height="30"/>
         <image name="placeholder" width="1500" height="1500"/>
-        <image name="second" width="30" height="30"/>
+        <image name="tv" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="7mL-ut-Thx"/>
