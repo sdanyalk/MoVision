@@ -39,6 +39,8 @@ class FavoritesViewController: UIViewController {
     }
 }
 
+// MARK : - Table View Data Source
+
 extension FavoritesViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -75,6 +77,7 @@ extension FavoritesViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "categoryFavoriteCell", for: indexPath) as! CategoryFavoriteTableViewCell
         
         if let favorite = favorite {
+            cell.titleLabel.textColor = UIColor.white
             cell.titleLabel.text = favorite.title
             
             if let data = favorite.data {
@@ -112,6 +115,21 @@ extension FavoritesViewController: UITableViewDataSource {
         }
     }
 }
+
+// MARK : - Table View Delegate
+
+extension FavoritesViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        view.tintColor = UIColor.black
+        
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = UIColor.white
+        header.textLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+    }
+}
+
+// MARK : - Fetched Results Core Data Delegate
 
 extension FavoritesViewController: NSFetchedResultsControllerDelegate {
     
