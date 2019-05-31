@@ -83,10 +83,18 @@ If you want to remove any movie or tv show from your favorites, all you have to 
 Movies are divided into three categories: **Top Rated**, **Up Coming** and **Now Playing**
 
 ![alt text](Screenshots/MoviesTab.png "Movies Tab Title")
+![alt text](Screenshots/MovieDetail.png "Movie Detail Title")
 
 ### TV Show List
 
 TV shows are divided into three categories: **Top Rated**, **Up Coming** and **Now Playing**
 
 ![alt text](Screenshots/TVShowsTab.png "TV Shows Tab Title")
+
+
+### Favorite List
+
+Favorites are divided into two categories: **Liked Movies** and **Liked TV Shows**
+
+![alt text](Screenshots/FavoritesTab.png "Favorites Tab Title")
 
