@@ -8,7 +8,7 @@ This is my final project in iOS nano-degree program.
 * [Details](#details)<br />
 * [User Interface](#ui)<br />
 * [Demo](#demo)<br />
-* [Feature Wishlist](#features)
+* [Future List](#future)
 
 <a name="req">
 
@@ -103,3 +103,15 @@ Favorites are divided into two categories: **Liked Movies** and **Liked TV Shows
 ## Demo
 
 ![alt text](https://thumbs.gfycat.com/AnnualFlawedArawana-size_restricted.gif "Demo.gif")
+
+<a name="future">
+
+## Future List
+
+Some ideas for additional features:
+
+* Authentication with TMBD
+* Sorting functionality
+* Switch between grid/list view of favorites
+* Add search functionality
+* Include Movie/TV Show ratings
