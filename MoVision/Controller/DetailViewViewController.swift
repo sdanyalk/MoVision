@@ -40,6 +40,12 @@ class DetailViewViewController: UIViewController {
         if let tvShow = tvShow {
             saveFavoriteTVShow(tvShow)
         }
+        
+        if favButton.currentImage == UIImage(named: "fav") {
+            favButton.setImage(UIImage(named: "unfav"), for: .normal)
+        } else {
+            favButton.setImage(UIImage(named: "fav"), for: .normal)
+        }
     }
 }
 
