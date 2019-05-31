@@ -27,3 +27,15 @@ This is my final project in iOS nano-degree program.
 * `git clone https://github.com/sdanyalk/MoVision.git`
 * `cd MoVision`
 * `pod install`
+
+<a name="description">
+
+## Description
+
+This is one stop app for all your entertainment needs. It shows a list of movie and tv shows. These are divided into three categories. Categories are top rated, up coming and currently playing/showing.
+
+You can click on any movie or tv show to see more details about it.
+
+In addition to that you can also mark any movie and/or tv show as a favorite. This will create a separate list of all your favorite movies and/or tv shows.
+
+If you want to remove any movie or tv show from your favorites, all you have to do is swipe left and it will be deleted. Other way you can do is by going into the detail screen and unselecting the **heart** button.
