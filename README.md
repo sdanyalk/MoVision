@@ -103,3 +103,4 @@ Favorites are divided into two categories: **Liked Movies** and **Liked TV Shows
 ## Demo
 
 ![alt text](https://gfycat.com/AnnualFlawedArawana "Demo.gif")
+<iframe src='https://gfycat.com/ifr/AnnualFlawedArawana' frameborder='0' scrolling='no' allowfullscreen width='640' height='1321'></iframe>
