@@ -90,7 +90,7 @@ Movies are divided into three categories: **Top Rated**, **Up Coming** and **Now
 TV shows are divided into three categories: **Top Rated**, **Up Coming** and **Now Playing**
 
 <img src="Screenshots/TVShowsTab.png" alt="TV Show Tab" width="275" height="550">
-<img src="Screenshots/TVShowsDetail.png" alt="TV Show Detail" width="275" height="550">
+<img src="Screenshots/TVShowDetail.png" alt="TV Show Detail" width="275" height="550">
 
 ### Favorite List
 
