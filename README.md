@@ -110,7 +110,7 @@ Favorites are divided into two categories: **Liked Movies** and **Liked TV Shows
 
 Some ideas for additional features:
 
-* Authentication with TMBD
+* Authentication with TMDB
 * Sorting functionality
 * Switch between grid/list view of favorites
 * Add search functionality
