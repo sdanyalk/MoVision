@@ -10,5 +10,5 @@ import Foundation
 
 struct TMBDAPIKey {
     // Please provide the Google Books API Key here
-    static let APIKey = "905709cfa9a7ae09553359bacc85b23b"
+    static let APIKey = ""
 }
